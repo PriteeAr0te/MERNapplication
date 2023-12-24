@@ -1,0 +1,271 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+body {
+  background-color: #e0e1dd;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #c7e4ec;
+}
+
+/* Error Page */
+.main-page {
+  height: 100%;
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.p404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:rgba(0, 0, 0, 0.3);
+  font-size: 5rem;
+}
+.container {
+  margin-top:6rem;
+}
+.notfound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Designing About Page */
+.person-image {
+  height:150px;
+}
+.emp-profile {
+  height:500px;
+  width:700px;
+  background-color:#ffffff;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 5%;
+  padding:1rem 2rem 2rem 2rem;
+}
+.emp-profile p {
+  color:blue;
+}
+.no-padding {
+  padding:0;
+  margin:0;
+}
+
+/* Designing Home Page */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90.5vh;   
+  width:100vw;
+}
+.home-left {
+  width:50%;
+  height:90.7vh;
+  background-color: rgba(27,38,59,0.7);
+}
+.main-content {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height:80px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.center-paragraph {
+  text-align: center;
+  margin: 0; 
+}
+
+/* Contact Page Designing */
+.contact-container1 {
+  margin-top:3rem;
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.inner-container {
+  padding:0.5rem 1rem 0.5rem 1rem;
+  height:70px;
+  width:300px;
+  background-color:#ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 5%;
+  display:flex;
+  align-items: center;
+  justify-content:flex-start;
+}
+.contact-container2 {
+  height:350px;
+  width:700px;
+  margin-top:5%;
+  margin-left:28%;
+  margin-right:28%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 5%;
+  padding:1rem 2rem 2rem 2rem;
+}
+.main {
+  display:flex;
+}
+.icon {
+  margin-right:1rem;
+  margin-left:1.5rem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.row {
+  margin-top:1rem;
+}
+.message-box {
+  margin:2rem 3rem 2rem 3rem;
+}
+.btn.no-margin {
+  margin: 0; 
+  margin-left:2rem;
+}
+/* signup/signin page designing */
+.signup-container {
+  margin:3% 20% 2% 23%;
+  height: 500px;
+  width:750px;
+  display:flex;
+  border-radius: 5%;
+  background-color: rgba(119, 141, 169,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.signin-container {
+  margin:5% 25% 5% 25%;
+  height: 400px;
+  width:700px;
+  display:flex;
+  border-radius: 5%;
+  background-color: rgb(119, 141, 169,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.signup-content {
+  margin: 1rem 2rem;
+}
+.signin-content {
+  margin: 1.5rem 2rem;
+}
+.signup-title {
+  text-align: left;
+}
+.signin-title {
+  text-align: left;
+}
+.signup-form {
+  height:400px;
+  width:450px;
+}
+.signin-form {
+  margin-left: 3rem;
+  height:300px;
+  width:400px;
+}
+.form-control.bottom-border-only {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid black;
+}
+.input-group {
+  margin-top:1.2rem;
+  width:85%;
+  border-radius: 5%;
+}
+#addon-wrapping {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #6c757d;
+  background-color: #ffffff;
+}
+.btn {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  background-color: #415a77;
+}
+.signup-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:auto;
+  transform: scaleX(-1);
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+.signin-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:auto;
+  transform: scaleX(-1);
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+.signup-image img {
+  width:230px;
+  border-radius: 5%;
+}
+.signin-image img {
+  width:230px;
+  border-radius: 5%;
+}
+.signup-main {
+  display: flex;
+  justify-content: space-evenly;
+}
+.signin-main {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
