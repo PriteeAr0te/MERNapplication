@@ -1,25 +1,72 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import personImage from '../Images/person-image.jpg';
+import myImage from '../Images/p photo.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+const navigate = useNavigate();
+const [userData, setUserData] = useState({
+  _id: '',
+  name: '',
+  email: '',
+  phone: '',
+  work: '',
+});
+
+  const callLoginPage = async() =>{
+    const token = localStorage.getItem('jwttoken');
+    if(token) {
+    try{
+      const res = await fetch('/about', {
+        method: "GET",
+        headers:{
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          // Authorization: `Bearer ${token}`
+        },
+        credentials:"include"
+      })
+      const data = await res.json();
+      console.log(data);
+      setUserData(data);
+
+      if(res.status !== 200){
+          const error = new Error(res.error);
+          throw error;
+      }
+    }
+    catch(error) {
+      console.log(error);
+    }
+  }else {
+    navigate("/login");
+  }
+}
+
+    useEffect(() => {
+        callLoginPage();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
   const [activeTab, setActiveTab] = useState('home');
 
   const handleTabChange = (tabId)=>{
     setActiveTab(tabId);
   }
   return (
-   <>
+    <>
+    {userData ? (
     <div className="centered">
-    <div className="container emp-profile">
-      <form>
+      <div className="container emp-profile">
+      <form method ="GET">
         <div className="row">
           <div className="col-md-4">
-            <img className="person-image" src={personImage} alt="Person-Pic"/>
+            <img className="person-image" src={userData.name ==="Pritee"|| userData.name==="Pritee Arote" ? myImage : personImage} alt="Person-Pic"/>
           </div>
           <div className="col-md-6">
             <div className="profile-head">
-              <h5>Pritee Arote</h5>
-              <h6>Software Developer</h6>
+              <h5>{userData.name}</h5>
+              <h6>{userData.work}</h6>
               <p className="profile-rating mt-3 mb-5">Rankings: <span>1/10</span></p>
             <ul className="nav nav-tabs" role="tablist">
                 <li className="nav-item">
@@ -49,50 +96,50 @@ const About = () => {
             <div className="tab-content profile-tab" id="myIdContent">
               <div className={`tab-pane fade ${activeTab ==='home' ? 'show active':''}`} id="home" role="tabpanel" area-labelledby="home-tab">
                 <div className="row mt-0">
-                  <div className="col-md-6 no-padding">
+                  <div className="col-md-4 no-padding">
                     <label>USER ID</label>
                   </div>
                   <div className="col-md-6 no-padding">
-                    <p>98765432221</p>
+                    <p>{userData._id}</p>
                   </div>
                 </div>
                 <div className="row mt-0">
-                  <div className="col-md-6 no-padding">
+                  <div className="col-md-4 no-padding">
                     <label>Name</label>
                   </div>
                   <div className="col-md-6 no-padding">
-                    <p>Pritee Arote</p>
+                    <p>{userData.name}</p>
                   </div>
                 </div>
                 <div className="row mt-0">
-                  <div className="col-md-6 no-padding">
+                  <div className="col-md-4 no-padding">
                     <label>Email</label>
                   </div>
                   <div className="col-md-6 no-padding">
-                    <p>arotepritee111@gmail.com</p>
+                    <p>{userData.email}</p>
                   </div>
                 </div>
                 <div className="row mt-0">
-                  <div className="col-md-6 no-padding">
+                  <div className="col-md-4 no-padding">
                     <label>Phone</label>
                   </div>
                   <div className="col-md-6 no-padding">
-                    <p>9322794841</p>
+                    <p>{userData.phone}</p>
                   </div>
                 </div>
                 <div className="row mt-0">
-                  <div className="col-md-6 no-padding">
+                  <div className="col-md-4 no-padding">
                     <label>Profession</label>
                   </div>
                   <div className="col-md-6 no-padding">
-                    <p>Software Developer</p>
+                    <p>{userData.work}</p>
                   </div>
                 </div>
               </div>
 
               <div className={`tab-pane fade ${activeTab === 'profile' ? 'show active' : ''}`} id="profile" role="tabpanel" area-labelledby="profile-tab">
                 <div className="row mt-0">
-                  <div className="col-md-6 no-padding">
+                  <div className="col-md-4 no-padding">
                     <label>Experience</label>
                   </div>
                   <div className="col-md-6 no-padding">
@@ -100,7 +147,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="row mt-0">
-                  <div className="col-md-6 no-padding">
+                  <div className="col-md-4 no-padding">
                     <label>Hourly Rate</label>
                   </div>
                   <div className="col-md-6 no-padding">
@@ -108,7 +155,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="row mt-0">
-                  <div className="col-md-6 no-padding">
+                  <div className="col-md-4 no-padding">
                     <label>Total Projects</label>
                   </div>
                   <div className="col-md-6 no-padding">
@@ -116,7 +163,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="row mt-0">
-                  <div className="col-md-6 no-padding">
+                  <div className="col-md-4 no-padding">
                     <label>English Level</label>
                   </div>
                   <div className="col-md-6 no-padding">
@@ -124,7 +171,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="row mt-0">
-                  <div className="col-md-6 no-padding">
+                  <div className="col-md-4 no-padding">
                     <label>Experience</label>
                   </div>
                   <div className="col-md-6 no-padding">
@@ -137,8 +184,12 @@ const About = () => {
           </div>
         </div>
       </form>
-    </div>   
     </div>
+    </div>
+    ) :(
+      <p>Loading...</p>
+    )}
+       
    </>
   )
 }

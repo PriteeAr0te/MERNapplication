@@ -16,7 +16,7 @@ const ErrorPage = () => {
         <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
       </div>
       <div className="error-button">
-        <Link to="/"><button type="button" class="btn btn-primary">Go Back Home</button></Link>
+        <Link to="/"><button type="button" className="btn btn-primary">Go Back Home</button></Link>
       </div>
     </div>
     </div>

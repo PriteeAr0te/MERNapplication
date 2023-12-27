@@ -69,8 +69,8 @@ body {
   height:150px;
 }
 .emp-profile {
-  height:500px;
-  width:700px;
+  height:450px;
+  width:650px;
   background-color:#ffffff;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   border-radius: 5%;
   padding:1rem 2rem 2rem 2rem;
@@ -88,7 +88,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90.5vh;   
+  height: 80vh;   
   width:100vw;
 }
 .home-left {

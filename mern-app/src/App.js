@@ -12,14 +12,16 @@ import {
 import Home from './Components/Home';
 import ErrorPage from './Components/ErrorPage';
 
+
+
 const App = () => {
   return (
       <>
-      <Navbar/>
+      <Navbar/> 
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/contactme" element={<Contact/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
         <Route path="*" element={<ErrorPage/>} />
