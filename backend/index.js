@@ -5,11 +5,7 @@ const app = express();
 
 dotenv.config({ path: "./.env" });
 require("./db/conn");
-app.use(
-  cors({
-    origin: "https://mernapp-pritee1852.netlify.app/",
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 const User = require("./models/userSchema");
