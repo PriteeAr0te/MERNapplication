@@ -11,7 +11,7 @@ const LogOut = () => {
   // const [showName, setShowName] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`${BASE_URL}/logout`, {
+    fetch(`${BASE_URL}/api/auth/logout`, {
       method: "GET",
       headers: {
         Accept: "application/json",

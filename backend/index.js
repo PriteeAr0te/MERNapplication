@@ -7,7 +7,8 @@ require("./db/conn");
 
 app.use(express.json());
 const User = require("./models/userSchema");
-app.use(require("./router/auth"));
+
+app.use("/api/auth", require("./router/auth"));
 
 const PORT = process.env.PORT || 4000;
 

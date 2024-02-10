@@ -18,7 +18,7 @@ const About = () => {
     const token = localStorage.getItem("jwttoken");
     if (token) {
       try {
-        const res = await fetch(`${BASE_URL}/about`, {
+        const res = await fetch(`${BASE_URL}/api/auth/about`, {
           method: "GET",
           headers: {
             Accept: "application/json",

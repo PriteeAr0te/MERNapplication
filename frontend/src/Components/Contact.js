@@ -13,7 +13,7 @@ const Contact = () => {
     const token = localStorage.getItem("jwttoken");
     if (token) {
       try {
-        const res = await fetch(`${BASE_URL}/getdata`, {
+        const res = await fetch(`${BASE_URL}/api/auth/getdata`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

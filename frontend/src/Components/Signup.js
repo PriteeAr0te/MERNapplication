@@ -24,7 +24,7 @@ const Signup = () => {
     e.preventDefault();
     const { name, email, phone, work, password, cpassword } = user;
     try {
-      const res = await fetch(`${BASE_URL}/register`, {
+      const res = await fetch(`${BASE_URL}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
