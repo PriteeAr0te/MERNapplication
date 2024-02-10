@@ -1,2 +1,4 @@
-node_modules
+# Ignore node_modules directories anywhere in the project
+**/node_modules/
+
 config.env
