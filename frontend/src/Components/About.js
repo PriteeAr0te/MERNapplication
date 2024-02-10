@@ -4,7 +4,7 @@ import myImage from "../Images/p photo.jpg";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
-  // const BASE_URL = ""
+  const BASE_URL = "https://mernapp-pritee1852.onrender.com";
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
     _id: "",
@@ -18,7 +18,7 @@ const About = () => {
     const token = localStorage.getItem("jwttoken");
     if (token) {
       try {
-        const res = await fetch("/about", {
+        const res = await fetch(`${BASE_URL}/about`, {
           method: "GET",
           headers: {
             Accept: "application/json",
