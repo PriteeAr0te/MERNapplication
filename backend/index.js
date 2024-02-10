@@ -1,9 +1,15 @@
 const dotenv = require("dotenv");
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 dotenv.config({ path: "./.env" });
 require("./db/conn");
+app.use(
+  cors({
+    origin: "https://mernapp-pritee1852.netlify.app/",
+  })
+);
 
 app.use(express.json());
 const User = require("./models/userSchema");
@@ -24,9 +30,6 @@ const PORT = process.env.PORT || 4000;
 // app.get('/login', (req,res)=> {
 //     res.send("Hello world from Login")
 // });
-app.get("/register", (req, res) => {
-  res.send("Hello world from Register");
-});
 
 app.listen(PORT, () => {
   console.log(`server is Listening at port no. ${PORT}`);
